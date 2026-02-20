@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P0rnNetwork — Exclusive Desi Adult Entertainment on Telegram</title>
+<meta name="description" content="Join P0rnNetwork on Telegram for exclusive desi and Indian adult entertainment videos. 18+ only. Free access to curated premium content.">
+<meta name="keywords" content="desi adult content, indian adult videos, telegram adult channel, exclusive desi entertainment, 18+ telegram channel, P0rnNetwork">
+<meta name="robots" content="index, follow">
+<meta name="author" content="P0rnNetwork">
+<meta property="og:title" content="P0rnNetwork — Exclusive Desi Adult Entertainment">
+<meta property="og:description" content="Your gateway to curated desi adult content. Join our Telegram channel for free. 18+ only.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://p0rnnetwork.com">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="P0rnNetwork — Exclusive Desi Content on Telegram">
+<meta name="twitter:description" content="Curated Indian adult entertainment. Free Telegram channel. 18+ only.">
+<link rel="canonical" href="https://p0rnnetwork.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "P0rnNetwork",
+  "url": "https://p0rnnetwork.com",
+  "description": "Exclusive desi adult entertainment content on Telegram",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://t.me/P0rnNetwork"
+  }
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0a0a0c;
+--surface:#111114;
+--surface2:#18181c;
+--border:#242429;
+--text:#e8e6e3;
+--text-dim:#8a8a8f;
+--accent:#c43b5c;
+--accent-hover:#d94a6b;
+--accent-glow:rgba(196,59,92,.25);
+--purple:#6c3d7a;
+--purple-dim:rgba(108,61,122,.15);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* Three.js Canvas */
+#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+/* Age Gate */
+.age-gate{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2rem;padding:2rem;text-align:center;transition:opacity .6s,visibility .6s}
+.age-gate.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.age-gate h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;letter-spacing:-.02em}
+.age-gate p{color:var(--text-dim);max-width:400px;font-size:.95rem}
+.age-gate-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.age-gate-btns button{padding:.85rem 2.5rem;border-radius:8px;border:none;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s}
+.btn-enter{background:var(--accent);color:#fff}
+.btn-enter:hover{background:var(--accent-hover);box-shadow:0 0 30px var(--accent-glow)}
+.btn-leave{background:var(--surface2);color:var(--text-dim);border:1px solid var(--border) !important}
+.btn-leave:hover{border-color:var(--text-dim) !important}
+
+/* Main Content */
+.main-wrap{position:relative;z-index:1;opacity:0;transition:opacity .8s}
+.main-wrap.visible{opacity:1}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);background:rgba(10,10,12,.7);border-bottom:1px solid rgba(36,36,41,.5);transition:all .4s}
+nav.scrolled{padding:.7rem 2rem;background:rgba(10,10,12,.92)}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+.nav-btn{background:var(--accent);color:#fff;border:none;padding:.55rem 1.4rem;border-radius:6px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none}
+.nav-btn:hover{background:var(--accent-hover);box-shadow:0 0 20px var(--accent-glow)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem}
+.hero-inner{max-width:680px}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--purple-dim);border:1px solid rgba(108,61,122,.3);color:#b67cc9;padding:.4rem 1rem;border-radius:50px;font-size:.78rem;font-weight:500;margin-bottom:1.8rem;letter-spacing:.03em;text-transform:uppercase}
+.badge .dot{width:6px;height:6px;background:#b67cc9;border-radius:50%;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3.8rem);font-weight:700;line-height:1.12;letter-spacing:-.03em;margin-bottom:1.2rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--text-dim);font-size:clamp(.95rem,2.2vw,1.12rem);max-width:520px;margin:0 auto 2.5rem;line-height:1.7}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:#fff;padding:1rem 2.2rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;border:none;cursor:pointer;transition:all .35s;position:relative;overflow:hidden}
+.cta-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent);opacity:0;transition:opacity .3s}
+.cta-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 40px var(--accent-glow)}
+.cta-primary:hover::before{opacity:1}
+.cta-primary svg{width:20px;height:20px;fill:currentColor}
+.cta-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--text-dim);padding:1rem 2rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:1rem;border:1px solid var(--border);transition:all .3s}
+.cta-secondary:hover{border-color:var(--text-dim);color:var(--text)}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:3.5rem;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-size:1.6rem;font-weight:700;letter-spacing:-.02em}
+.stat-label{color:var(--text-dim);font-size:.78rem;margin-top:.2rem;text-transform:uppercase;letter-spacing:.06em}
+
+/* Section Styles */
+section{padding:6rem 2rem}
+.section-inner{max-width:960px;margin:0 auto}
+.section-tag{color:var(--accent);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.8rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1rem}
+.section-desc{color:var(--text-dim);max-width:560px;font-size:.95rem;line-height:1.7;margin-bottom:3rem}
+
+/* Features */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:all .4s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .4s}
+.feature-card:hover{border-color:rgba(196,59,92,.3);transform:translateY(-4px)}
+.feature-card:hover::before{opacity:1}
+.feature-icon{width:44px;height:44px;background:var(--purple-dim);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.2rem}
+.feature-card h3{font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
+.feature-card p{color:var(--text-dim);font-size:.88rem;line-height:1.65}
+
+/* How It Works */
+.steps{display:flex;flex-direction:column;gap:1.5rem;counter-reset:step}
+.step{display:flex;gap:1.5rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;transition:all .35s}
+.step:hover{border-color:rgba(196,59,92,.2)}
+.step-num{flex-shrink:0;width:44px;height:44px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem}
+.step h3{font-size:1rem;font-weight:600;margin-bottom:.3rem}
+.step p{color:var(--text-dim);font-size:.88rem;line-height:1.6}
+
+/* CTA Section */
+.cta-section{text-align:center;position:relative}
+.cta-section .cta-box{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:4rem 2.5rem;max-width:640px;margin:0 auto;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-60%;left:-20%;width:140%;height:140%;background:radial-gradient(ellipse,var(--accent-glow),transparent 70%);opacity:.5;pointer-events:none}
+.cta-box h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:1rem;position:relative}
+.cta-box p{color:var(--text-dim);margin-bottom:2rem;font-size:.95rem;position:relative}
+.cta-box .cta-primary{position:relative;font-size:1.05rem;padding:1.1rem 2.8rem}
+
+/* Disclaimer */
+.disclaimer{background:var(--surface);border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
+.disclaimer-inner{max-width:700px;margin:0 auto}
+.disclaimer .tag-18{display:inline-flex;align-items:center;gap:.4rem;background:rgba(196,59,92,.15);color:var(--accent);padding:.35rem .9rem;border-radius:6px;font-size:.78rem;font-weight:600;margin-bottom:1rem}
+.disclaimer p{color:var(--text-dim);font-size:.82rem;line-height:1.7}
+
+/* Footer */
+footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
+footer p{color:var(--text-dim);font-size:.8rem}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* Scroll Animations */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* Mobile */
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  .hero{padding:7rem 1.4rem 4rem}
+  section{padding:4rem 1.4rem}
+  .hero-stats{gap:2rem}
+  .cta-box{padding:3rem 1.5rem !important}
+  .step{flex-direction:column;gap:1rem}
+  .feature-card{padding:1.5rem}
+}
+
+/* Telegram Icon */
+.tg-icon{display:inline-block;width:20px;height:20px;vertical-align:middle}
+
+/* Glow line at top */
+.glow-top{position:fixed;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);z-index:999;opacity:.6}
+
+/* Smooth entrance for age gate elements */
+.age-gate > *{animation:fadeUp .6s ease forwards;opacity:0}
+.age-gate > *:nth-child(1){animation-delay:.1s}
+.age-gate > *:nth-child(2){animation-delay:.2s}
+.age-gate > *:nth-child(3){animation-delay:.3s}
+.age-gate > *:nth-child(4){animation-delay:.4s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(15px)}}
+</style>
+</head>
+<body>
+
+<!-- Three.js Background -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- Glow Line -->
+<div class="glow-top"></div>
+
+<!-- Age Verification Gate -->
+<div class="age-gate" id="ageGate">
+  <div class="tag-18" style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(196,59,92,.15);color:var(--accent);padding:.45rem 1.1rem;border-radius:6px;font-size:.85rem;font-weight:700">⚠ 18+ Only</div>
+  <h2>Age Verification Required</h2>
+  <p>This website contains references to adult entertainment. You must be 18 years or older to proceed.</p>
+  <div class="age-gate-btns">
+    <button class="btn-enter" onclick="enterSite()">I Am 18+ — Enter</button>
+    <button class="btn-leave" onclick="window.location.href='https://google.com'">Leave</button>
+  </div>
+</div>
+
+<!-- Main Content (hidden until age verified) -->
+<div class="main-wrap" id="mainWrap">
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="logo">P0rn<span>Network</span></div>
+    <a href="https://t.me/P0rnNetwork" target="_blank" rel="noopener noreferrer" class="nav-btn">Join Channel</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="badge reveal"><span class="dot"></span> Live on Telegram</div>
+      <h1 class="reveal reveal-delay-1">India's Most Trusted <em>Adult Content</em> Network</h1>
+      <p class="reveal reveal-delay-2">We curate the finest desi adult entertainment — delivered straight to your Telegram. No ads, no spam, no nonsense. Just real content for real people.</p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="https://t.me/P0rnNetwork" target="_blank" rel="noopener noreferrer" class="cta-primary">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Join Telegram Channel
+        </a>
+        <a href="#features" class="cta-secondary">Learn More ↓</a>
+      </div>
+      <div class="hero-stats reveal reveal-delay-3">
+        <div class="stat">
+          <div class="stat-num" id="counter1">0</div>
+          <div class="stat-label">Members</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="counter2">0</div>
+          <div class="stat-label">Daily Posts</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Free</div>
+          <div class="stat-label">Forever</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="section-inner">
+      <div class="section-tag reveal">Why People Love Us</div>
+      <h2 class="section-title reveal">Built Different from the Rest</h2>
+      <p class="section-desc reveal">We're not just another channel. Here's what sets P0rnNetwork apart from thousands of low-effort clones out there.</p>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎬</div>
+          <h3>Handpicked Desi Content</h3>
+          <p>Every video is manually curated. We focus on quality over quantity — only the best Indian adult entertainment makes the cut.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">🔒</div>
+          <h3>Private & Discreet</h3>
+          <p>Telegram keeps your identity private. No accounts linked, no browsing history exposed. Watch freely without worry.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">🚀</div>
+          <h3>Daily Fresh Uploads</h3>
+          <p>New content drops every single day. We never go inactive — our team works around the clock to keep things fresh.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">📱</div>
+          <h3>Works Everywhere</h3>
+          <p>Telegram runs on Android, iOS, desktop, and web. Access your content anywhere, anytime — no special apps needed.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">🚫</div>
+          <h3>Zero Ads & Spam</h3>
+          <p>No pop-ups, no redirects, no shady links. Just clean content served directly to you. That's a promise we keep.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">💯</div>
+          <h3>100% Free Access</h3>
+          <p>We don't charge a single rupee. No premium tiers, no paywalls. Everything on the channel is completely free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" style="background:var(--surface)">
+    <div class="section-inner">
+      <div class="section-tag reveal">Get Started in Seconds</div>
+      <h2 class="section-title reveal">Three Simple Steps</h2>
+      <p class="section-desc reveal">Joining takes less than a minute. No signups, no forms, no BS.</p>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Open Telegram</h3>
+            <p>Download the Telegram app if you don't have it already. It's free on every platform — Android, iPhone, Windows, Mac.</p>
+          </div>
+        </div>
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Search @P0rnNetwork</h3>
+            <p>Type our channel name in the Telegram search bar, or simply click the join button on this page to go directly there.</p>
+          </div>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Hit Join & Enjoy</h3>
+            <p>That's it. You're in. Start browsing the content right away. New posts drop daily so you'll never run out of stuff to watch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <div class="cta-box reveal">
+        <h2>Ready to Join 50,000+ Members?</h2>
+        <p>Stop wasting time on sketchy websites. Get the best desi content delivered to you on Telegram — it's free, private, and always updated.</p>
+        <a href="https://t.me/P0rnNetwork" target="_blank" rel="noopener noreferrer" class="cta-primary">
+          <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Join P0rnNetwork on Telegram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <div class="disclaimer-inner">
+      <div class="tag-18">🔞 18+ Adults Only</div>
+      <p>This website and the linked Telegram channel contain references to adult-oriented entertainment intended strictly for individuals aged 18 years and above. All content is hosted exclusively on Telegram — this website does not host, store, or distribute any explicit media. By accessing this site or the Telegram channel, you confirm that you are of legal age in your jurisdiction. This platform operates with all required licenses and complies with applicable regulations for online adult content distribution. We do not condone illegal content of any kind.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 P0rnNetwork. All rights reserved. Content hosted on <a href="https://t.me/P0rnNetwork" target="_blank" rel="noopener noreferrer">Telegram</a>. Licensed 18+ platform.</p>
+  </footer>
+
+</div>
+
+<script>
+// === THREE.JS PARTICLE BACKGROUND ===
+(function(){
+  const canvas = document.getElementById('bg-canvas');
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:false, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
+  camera.position.z = 3;
+  
+  // Particles
+  const count = 1800;
+  const geo = new THREE.BufferGeometry();
+  const pos = new Float32Array(count * 3);
+  const vel = new Float32Array(count * 3);
+  
+  for(let i = 0; i < count * 3; i += 3){
+    pos[i]   = (Math.random() - 0.5) * 10;
+    pos[i+1] = (Math.random() - 0.5) * 10;
+    pos[i+2] = (Math.random() - 0.5) * 10;
+    vel[i]   = (Math.random() - 0.5) * 0.002;
+    vel[i+1] = (Math.random() - 0.5) * 0.002;
+    vel[i+2] = (Math.random() - 0.5) * 0.001;
+  }
+  
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  
+  const mat = new THREE.PointsMaterial({
+    size: 0.02,
+    color: new THREE.Color('#c43b5c'),
+    transparent: true,
+    opacity: 0.4,
+    sizeAttenuation: true
+  });
+  
+  const points = new THREE.Points(geo, mat);
+  scene.add(points);
+  
+  // Subtle second layer
+  const count2 = 600;
+  const geo2 = new THREE.BufferGeometry();
+  const pos2 = new Float32Array(count2 * 3);
+  for(let i = 0; i < count2 * 3; i += 3){
+    pos2[i]   = (Math.random() - 0.5) * 8;
+    pos2[i+1] = (Math.random() - 0.5) * 8;
+    pos2[i+2] = (Math.random() - 0.5) * 6;
+  }
+  geo2.setAttribute('position', new THREE.BufferAttribute(pos2, 3));
+  const mat2 = new THREE.PointsMaterial({
+    size: 0.015,
+    color: new THREE.Color('#6c3d7a'),
+    transparent: true,
+    opacity: 0.25,
+    sizeAttenuation: true
+  });
+  const points2 = new THREE.Points(geo2, mat2);
+  scene.add(points2);
+  
+  // Mouse interaction
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 0.5;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 0.5;
+  });
+  
+  function animate(){
+    requestAnimationFrame(animate);
+    
+    const positions = geo.attributes.position.array;
+    for(let i = 0; i < count * 3; i += 3){
+      positions[i]   += vel[i];
+      positions[i+1] += vel[i+1];
+      positions[i+2] += vel[i+2];
+      if(Math.abs(positions[i]) > 5) vel[i] *= -1;
+      if(Math.abs(positions[i+1]) > 5) vel[i+1] *= -1;
+      if(Math.abs(positions[i+2]) > 5) vel[i+2] *= -1;
+    }
+    geo.attributes.position.needsUpdate = true;
+    
+    points.rotation.y += 0.0003;
+    points.rotation.x += 0.0001;
+    points2.rotation.y -= 0.0002;
+    points2.rotation.x -= 0.0001;
+    
+    camera.position.x += (mouseX - camera.position.x) * 0.02;
+    camera.position.y += (-mouseY - camera.position.y) * 0.02;
+    camera.lookAt(scene.position);
+    
+    renderer.render(scene, camera);
+  }
+  animate();
+  
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+})();
+
+// === AGE GATE ===
+function enterSite(){
+  document.getElementById('ageGate').classList.add('hidden');
+  document.getElementById('mainWrap').classList.add('visible');
+  sessionStorage.setItem('ageVerified', 'true');
+}
+if(sessionStorage.getItem('ageVerified') === 'true'){
+  document.getElementById('ageGate').classList.add('hidden');
+  document.getElementById('mainWrap').classList.add('visible');
+}
+
+// === NAV SCROLL ===
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// === SCROLL REVEAL ===
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+}, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+revealEls.forEach(el => revealObserver.observe(el));
+
+// === COUNTER ANIMATION ===
+function animateCounter(el, target, suffix = ''){
+  let current = 0;
+  const step = target / 60;
+  const interval = setInterval(() => {
+    current += step;
+    if(current >= target){
+      current = target;
+      clearInterval(interval);
+    }
+    if(target >= 1000){
+      el.textContent = Math.floor(current / 1000) + 'K+' + suffix;
+    } else {
+      el.textContent = Math.floor(current) + '+' + suffix;
+    }
+  }, 25);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      animateCounter(document.getElementById('counter1'), 50000);
+      animateCounter(document.getElementById('counter2'), 25);
+      statsObserver.disconnect();
+    }
+  });
+}, {threshold: 0.5});
+
+const heroStats = document.querySelector('.hero-stats');
+if(heroStats) statsObserver.observe(heroStats);
+
+// === SMOOTH SCROLL ===
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+
+</body>
+</html>
