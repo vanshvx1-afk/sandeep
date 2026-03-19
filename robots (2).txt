@@ -140,10 +140,13 @@
 
   <!-- Preload critical resources -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <script type="module" crossorigin src="/assets/index-DIhHYGj1.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/motion-D95FntGP.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-CV6_Y08P.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-Mf_GD1CN.css">
 </head>
 
 <body class="bg-void text-white font-body antialiased overflow-x-hidden">
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
